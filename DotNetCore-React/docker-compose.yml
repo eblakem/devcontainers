@@ -1,0 +1,25 @@
+volumes:
+  sqldata:
+    driver: local
+
+services:
+  app:
+    container_name: dotnetcore-app
+    command: ["sleep", "infinity"]
+    build:
+      context: .
+    volumes:
+      - ~/.ssh:/home/ubuntu/.ssh
+      - ~/.config/nvim:/home/ubuntu/.config/nvim
+      - ./:/home/ubuntu/devcontainer
+    ports:
+      - "5109:5109"
+      - "5173:5173"
+  db:
+    container_name: mssql-db
+    build:
+      context: ./mssql
+    volumes:                    
+      - sqldata:/var/opt/mssql
+    ports:
+      - "1433:1433"
