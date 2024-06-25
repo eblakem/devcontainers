@@ -3,7 +3,7 @@ volumes:
     driver: local
 
 services:
-  haskell-elm-container:
+  app:
     command: ["sleep","infinity"]
     container_name: haskell-elm
     build:

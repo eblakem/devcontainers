@@ -18,7 +18,7 @@ COPY . /scripts
 
 # Grant permissions so our scripts can be executable
 RUN chmod +x /scripts/entrypoint.sh
-RUN chmod +x /scripts/configure-db.sh
+RUN chmod +x /scripts/init-db.sh
 
 # Set environment variables, not have to write them with the docker run command
 # Note: make sure that your password matches what is in the run-initialization script 
