@@ -3,9 +3,9 @@ volumes:
     driver: local
 
 services:
-  devcontainer:
+  haskell-elm-container:
     command: ["sleep","infinity"]
-    container_name: heimdall
+    container_name: haskell-elm
     build:
       context: .
     volumes:
@@ -17,6 +17,7 @@ services:
       - "32873:32873"
   db:
     image: postgres
+    container_name: haskell-elm-postgres
     volumes:
       - pgdata:/var/lib/postgresql/data
     healthcheck:

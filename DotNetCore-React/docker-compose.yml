@@ -4,7 +4,7 @@ volumes:
 
 services:
   app:
-    container_name: dotnetcore-app
+    container_name: dotnetcore-react
     command: ["sleep", "infinity"]
     build:
       context: .
@@ -16,7 +16,7 @@ services:
       - "5109:5109"
       - "5173:5173"
   db:
-    container_name: mssql-db
+    container_name: dotnetcore-react-mssql
     build:
       context: ./mssql
     volumes:                    
